@@ -23,12 +23,17 @@ var app = angular.module('myApp', ['ngAutocomplete', 'ngRoute'])
 })
 
 .controller('firstCtrl', ['$scope', 'myService', function ($scope, myService) {
-    myService.checkPrefill() ? $scope.form = myService.getData(): myService.getTransactions().then(function(data){
-        $scope.form = data;
-    })
-    
-    // $scope.form = myService.getData();
-    console.log($scope.form);
+    myService.checkPrefill() ? $scope.form = myService.getData(): myService.getTransactions()
+        .then(function(data){
+            $scope.form = data;
+        })
+        .then(function(){
+            $scope.filledForm = function(){
+                var len = Object.keys($scope.form).length;
+                return len == 6 ? false: true;
+            }
+        })
+
 
     $scope.check = function(obj) {
         return Object.keys(obj).length
@@ -38,10 +43,7 @@ var app = angular.module('myApp', ['ngAutocomplete', 'ngRoute'])
         myService.setData($scope.form);
     }
 
-    $scope.filledForm = function(){
-        var len = Object.keys($scope.form).length;
-        return len == 6 ? false: true;
-    }
+
 
 
 }])
