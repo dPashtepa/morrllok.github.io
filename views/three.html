@@ -1,0 +1,20 @@
+<div>Шаг 3</div>
+<div>Введённые данные</div>
+<ul>
+	<li ng-repeat="(key, value) in form">
+		{{key}}: {{value}}
+	</li>
+</ul>
+
+<button ng-click="submitForm()">Отправить</button>
+
+<nav>
+    <ul class="nav nav-tabs">
+        <li><a href="#/stepTwo">Previous</a></li>
+    </ul>
+    <div class="progress-bar">
+    	<a href="#/stepOne">1</a>
+    	<a href="#/stepTwo" >2</a>
+    	<a href="#/stepThree" class="active">3</a>
+    </div>
+</nav>

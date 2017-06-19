@@ -1,0 +1,13 @@
+.error{
+	color: red;
+}
+
+.error-link, a.disabled{
+	opacity: 0.5;
+	pointer-events: none;
+	cursor: default;
+}
+
+a.active {
+	color: blue;
+}
