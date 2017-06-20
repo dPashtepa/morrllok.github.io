@@ -22,6 +22,6 @@
     <div class="progress-bar">
     	<a href="#/stepOne" class="active">1</a>
     	<a href="#/stepTwo" ng-class="{ 'disabled': check(myForm.$error)}" ng-click="addData()">2</a>
-    	<a href="#/stepThree"  ng-class="{ 'disabled': filledForm()}">3</a>
+    	<a href="#/stepThree"  ng-class="{ 'disabled': filledForm() || check(myForm.$error)}">3</a>
     </div>
 </nav>
