@@ -3,13 +3,13 @@
 <form name="myForm">
 	<label for="Summ">Сумма</label>
 	<input id="Summ" type="number" ng-model="form.summ" name="Summ" min="1" max="10000" required/>
-	<div role="alert">
+	<div class="alert">
 	    <span class="error" ng-show="myForm.Summ.$error.required">Поле "Сумма" обязательное</span>
 	    <span class="error" ng-show="myForm.Summ.$error.max || myForm.Summ.$error.min">Введите целочисленное значение от 1 до 10000</span>
 	</div>
 	<label for="Period">Срок</label>
 	<input id="Period" type="number" ng-model="form.period" name="Period" min="1" max="12" required/>
-	<div role="alert">
+	<div class="alert">
 	    <span class="error" ng-show="myForm.Period.$error.required">Поле "Срок" обязательное</span>
 	    <span class="error" ng-show="myForm.Period.$error.max || myForm.Summ.$error.min">Введите целочисленное значение от 1 до 12</span>
 	</div>

@@ -1,26 +1,26 @@
-<div>Шаг 2</div>
+<h1>Шаг 2</h1>
 <br>
 <form name="myForm2">
 	<label for="Code">ИНН</label>
 	<input id="Code" type="number" ng-model="form.code" name="Code" required ng-pattern="/^[0-9]{10}$/"/>
-	<div role="alert">
+	<div class="alert">
 	    <span class="error" ng-show="myForm2.Code.$error.required">Поле "ИНН" обязательное</span>
 	    <span class="error" ng-show="myForm2.Code.$error.pattern">Длина ИНН должна быть 10 символов</span>
 	    <span class="error" ng-show="!myForm2.Code.$error.required && !myForm2.Code.$error.pattern && !checkCode(form.code)">Возраст должен быть не меньше 21 года</span>
 	</div>
 	<label for="Surname">Фамилия</label>
 	<input id="Surname" type="text" ng-model="form.surname" name="Surname" required/>
-	<div role="alert">
+	<div class="alert">
 	    <span class="error" ng-show="myForm2.Surname.$error.required">Поле "Фамилия" обязательное</span>
 	</div>
 	<label for="Name">Имя</label>
 	<input id="Name" type="text" ng-model="form.name" name="Name" required/>
-	<div role="alert">
+	<div class="alert">
 	    <span class="error" ng-show="myForm2.Name.$error.required">Поле "Имя" обязательное</span>
 	</div>
 	<label for="City">Город</label>
 	<input type="text" id="City" name="City" ng-autocomplete="result" details="details" options="options" ng-model="form.city" required/>
-	<div role="alert">
+	<div class="alert">
 	    <span class="error" ng-show="myForm2.City.$error.required">Поле "Город" обязательное</span>
 	</div>
 </form>

@@ -80,7 +80,11 @@ var app = angular.module('myApp', ['ngAutocomplete', 'ngRoute'])
 
     myService.checkPrefill() ? $scope.form = myService.getData(): myService.getTransactions().then(function(data){
         $scope.form = data;
-    })
+    });
+
+    $scope.checkResults = function(obj) {
+        return Object.keys(obj).length < 5;
+    }
 
     $scope.submitForm = function () {
             var data = $scope.form;
@@ -96,7 +100,7 @@ var app = angular.module('myApp', ['ngAutocomplete', 'ngRoute'])
                 alert('Форма отправленна!');
             })
             .error(function (data, status, header, config) {
-                alert('Форма не отправленна:' + status);
+                alert('Форма не отправленна: ' + status);
             });
         
     };
@@ -124,7 +128,7 @@ var app = angular.module('myApp', ['ngAutocomplete', 'ngRoute'])
         },
         getTransactions: function(){
            //is a request needed?
-           return $http.get("form.json").then(function(result){
+           return $http.get("form_new.json").then(function(result){
                formData = result.data;
                preFilled = true;
                return formData;
