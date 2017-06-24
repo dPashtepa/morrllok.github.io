@@ -30,7 +30,7 @@ var app = angular.module('myApp', ['ngAutocomplete', 'ngRoute'])
         .then(function(){
             $scope.filledForm = function(){
                 var len = Object.keys($scope.form).length;
-                return len == 6 ? false: true;
+                return len !== 6;
             }
         })
 
@@ -63,7 +63,7 @@ var app = angular.module('myApp', ['ngAutocomplete', 'ngRoute'])
             startDate = new Date(1900, 0, 0);
         startDate.setDate(startDate.getDate()+five);
         var yearsApart = new Date(new Date - startDate).getFullYear()-1970;
-        return yearsApart >= 21 ? true: false;
+        return yearsApart >= 21;
     }
 
     $scope.result = '';
