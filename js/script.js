@@ -23,16 +23,24 @@ var app = angular.module('myApp', ['ngAutocomplete', 'ngRoute'])
 })
 
 .controller('firstCtrl', ['$scope', 'myService', function ($scope, myService) {
-    myService.checkPrefill() ? $scope.form = myService.getData(): myService.getTransactions()
-        .then(function(data){
-            $scope.form = data;
-        })
-        .then(function(){
-            $scope.filledForm = function(){
-                var len = Object.keys($scope.form).length;
-                return len !== 6;
-            }
-        })
+    if(myService.checkPrefill()){
+        $scope.form = myService.getData();
+        $scope.filledForm = function(){
+            var len = Object.keys($scope.form).length;
+            return len !== 6;
+        }
+    } else {
+        myService.getTransactions()
+            .then(function(data){
+                $scope.form = data;
+            })
+            .then(function(){
+                $scope.filledForm = function(){
+                    var len = Object.keys($scope.form).length;
+                    return len !== 6;
+                }
+            })
+    }
 
 
     $scope.check = function(obj) {
@@ -78,12 +86,23 @@ var app = angular.module('myApp', ['ngAutocomplete', 'ngRoute'])
 
 .controller('thirdCtrl', ['$scope', 'myService', '$http', function ($scope, myService, $http) {
 
-    myService.checkPrefill() ? $scope.form = myService.getData(): myService.getTransactions().then(function(data){
-        $scope.form = data;
-    });
-
-    $scope.checkResults = function(obj) {
-        return Object.keys(obj).length < 5;
+    if(myService.checkPrefill()){
+        $scope.form = myService.getData();
+        $scope.checkResults = function(obj) {
+            return Object.keys(obj).length < 5;
+        }
+        if($scope.checkResults($scope.form)) window.location.href = '#/stepOne';
+    } else {
+        myService.getTransactions()
+            .then(function(data){
+                $scope.form = data;
+            })
+            .then(function(){
+                $scope.checkResults = function(obj) {
+                    return Object.keys(obj).length < 5;
+                }
+        if($scope.checkResults($scope.form)) window.location.href = '#/stepOne';
+        })
     }
 
     $scope.submitForm = function () {
