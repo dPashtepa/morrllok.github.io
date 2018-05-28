@@ -1,12 +1,12 @@
-<h1>Шаг 3</h1>
-<div>Введённые данные</div>
+<h1>Step 3</h1>
+<div>Collected data:</div>
 <ul class="last">
 	<li ng-repeat="(key, value) in form">
 		{{key}}: {{value}}
 	</li>
 </ul>
 
-<button ng-class="{'disabled': checkResults(form)}" ng-click="submitForm()">Отправить</button>
+<button ng-class="{'disabled': checkResults(form)}" ng-click="submitForm()">Send</button>
 
 <nav>
     <ul class="nav nav-tabs">

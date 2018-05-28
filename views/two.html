@@ -1,27 +1,27 @@
-<h1>Шаг 2</h1>
+<h1>Step 2</h1>
 <br>
 <form name="myForm2">
-	<label for="Code">ИНН</label>
+	<label for="Code">ID</label>
 	<input id="Code" type="number" ng-model="form.code" name="Code" required ng-pattern="/^[0-9]{10}$/"/>
 	<div class="alert">
-	    <span class="error" ng-show="myForm2.Code.$error.required">Поле "ИНН" обязательное</span>
-	    <span class="error" ng-show="myForm2.Code.$error.pattern">Длина ИНН должна быть 10 символов</span>
-	    <span class="error" ng-show="!myForm2.Code.$error.required && !myForm2.Code.$error.pattern && !checkCode(form.code)">Возраст должен быть не меньше 21 года</span>
+	    <span class="error" ng-show="myForm2.Code.$error.required">Field "ID" is mandatory</span>
+	    <span class="error" ng-show="myForm2.Code.$error.pattern">The length of the field must be 10 characters</span>
+	    <span class="error" ng-show="!myForm2.Code.$error.required && !myForm2.Code.$error.pattern && !checkCode(form.code)">Age must be at least 21 years old</span>
 	</div>
-	<label for="Surname">Фамилия</label>
+	<label for="Surname">Surname</label>
 	<input id="Surname" type="text" ng-model="form.surname" name="Surname" required/>
 	<div class="alert">
-	    <span class="error" ng-show="myForm2.Surname.$error.required">Поле "Фамилия" обязательное</span>
+	    <span class="error" ng-show="myForm2.Surname.$error.required">Field "Surname" is mandatory</span>
 	</div>
-	<label for="Name">Имя</label>
+	<label for="Name">Name</label>
 	<input id="Name" type="text" ng-model="form.name" name="Name" required/>
 	<div class="alert">
-	    <span class="error" ng-show="myForm2.Name.$error.required">Поле "Имя" обязательное</span>
+	    <span class="error" ng-show="myForm2.Name.$error.required">Field "Name" is mandatory</span>
 	</div>
-	<label for="City">Город</label>
+	<label for="City">City</label>
 	<input type="text" id="City" name="City" ng-autocomplete="result" details="details" options="options" ng-model="form.city" required/>
 	<div class="alert">
-	    <span class="error" ng-show="myForm2.City.$error.required">Поле "Город" обязательное</span>
+	    <span class="error" ng-show="myForm2.City.$error.required">Field "City" is mandatory</span>
 	</div>
 </form>
 

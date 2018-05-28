@@ -1,17 +1,17 @@
-<h1>Шаг 1</h1>
+<h1>Step 1</h1>
 <br>
 <form name="myForm">
-	<label for="Summ">Сумма</label>
+	<label for="Summ">Summ</label>
 	<input id="Summ" type="number" ng-model="form.summ" name="Summ" min="1" max="10000" required/>
 	<div class="alert">
-	    <span class="error" ng-show="myForm.Summ.$error.required">Поле "Сумма" обязательное</span>
-	    <span class="error" ng-show="myForm.Summ.$error.max || myForm.Summ.$error.min">Введите целочисленное значение от 1 до 10000</span>
+	    <span class="error" ng-show="myForm.Summ.$error.required">Field "Summ" is mandatory</span>
+	    <span class="error" ng-show="myForm.Summ.$error.max || myForm.Summ.$error.min">Enter an integer value from 1 to 10000</span>
 	</div>
-	<label for="Period">Срок</label>
+	<label for="Period">Period</label>
 	<input id="Period" type="number" ng-model="form.period" name="Period" min="1" max="12" required/>
 	<div class="alert">
-	    <span class="error" ng-show="myForm.Period.$error.required">Поле "Срок" обязательное</span>
-	    <span class="error" ng-show="myForm.Period.$error.max || myForm.Summ.$error.min">Введите целочисленное значение от 1 до 12</span>
+	    <span class="error" ng-show="myForm.Period.$error.required">Field "Period" is mandatory</span>
+	    <span class="error" ng-show="myForm.Period.$error.max || myForm.Summ.$error.min">Enter an integer value from 1 to 12</span>
 	</div>
 </form>
 
